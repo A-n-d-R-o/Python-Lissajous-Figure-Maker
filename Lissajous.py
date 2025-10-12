@@ -136,7 +136,7 @@ def anim_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, 
         writer=PillowWriter(fps=fps)
              )
 
-'''GIF Lissajous figure with waves'''
+'''GIF Lissajous with waves'''
 
 def liss_and_waves(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, show_dot=False, frames=200, fps=20):
 
