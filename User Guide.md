@@ -129,7 +129,7 @@ Example call and output:
 def liss_and_waves(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, show_dot=False, frames=200, fps=20):
 ```
 
-Plots the standard Lissajous figure, with the same parameters as `anim_liss`, but instead surrounded by the the $x$ and $y$ waves to provide a nice visual and intuition of the formation of Lissajous figures.
+Plots the standard Lissajous figure, with the same parameters as `anim_liss`, but instead surrounded by the the $x$ and $y$ waves to provide an intuition of the formation of the Lissajous figure.
 
 * `amp1` (float): amplitude of the $x$ wave. Automatically set to 1.
 * `af1` (float): angular frequency of the $x$ wave. Automatically set to 1.
