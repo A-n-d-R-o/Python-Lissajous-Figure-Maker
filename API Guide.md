@@ -26,7 +26,7 @@ def joint_period(af1, af2):
 ```
 Given two angular frequencies, `af1` and `af2`, this function calculates the $x$ distance of the "overlapping period" of two sine waves with such angular frequencies &mdash; used to calculate the minimum interval for which to sample over to produce the Lissajous figures.
 
-* `af` (float): angular frequency of th $x$ wave.
+* `af1` (float): angular frequency of th $x$ wave.
 * `af2` (float): angular frequency of the $y$ wave.
 
 <br>
@@ -34,9 +34,9 @@ Given two angular frequencies, `af1` and `af2`, this function calculates the $x$
 ```python
 def format_coeff(num):
 ```
-A function for cleaning the coefficients of the plot axes' titles, for example, turning $1\sin 1x$ into $\sin x$.
+A function for cleaning the coefficients of the plot's axes titles, for example, turning $1\sin 1x$ into $\sin x$.
 
-* `num` (float): the coefficient in question, any on of: $A_x$, $\omega_x$, $A_y$, $\omega_y$.
+* `num` (float): the coefficient in question, any one of: $A_x$, $\omega_x$, $A_y$, $\omega_y$.
 
 <br>
 
@@ -103,7 +103,7 @@ The function that plots a moving Lissajous figure, with any or none of: a varyin
 * `amp2` (float): amplitude of the $y$ wave. Automatically set to 1.
 * `af2` (float): angular frequency of the $y$ wave. Automatically set to 1.
 * `phi` (float): phase of the $y$ wave. Automatically set to 0.
-* `draw` (bool): whether or not to *draw and erase* the Lissajoud figure, defaulted to False.
+* `draw` (bool): whether or not to *draw and erase* the Lissajous figure, defaulted to False.
 * `vary_phase` (bool): varies the phase $\phi$ of the $y$ wave from $0$ to $2 \pi$ &mdash; this causes the Lissajous figure to "rotate". Defaulted to True.
 * `show_dot` (bool): shows a white dot that traces the path of the Lissajous figure with time starting from $0$ and ending at the end of the cycle (`frames/fps`). Automically set to False.
 * `frames` (int): the number of frames to show in the GIF, set to 200 by default.
@@ -136,7 +136,7 @@ Plots the standard Lissajous figure, with the same parameters as `anim_liss`, bu
 * `amp2` (float): amplitude of the $y$ wave. Automatically set to 1.
 * `af2` (float): angular frequency of the $y$ wave. Automatically set to 1.
 * `phi` (float): phase of the $y$ wave. Automatically set to 0.
-* `draw` (bool): whether or not to *draw and erase* the Lissajoud figure, defaulted to False.
+* `draw` (bool): whether or not to *draw and erase* the Lissajous figure, defaulted to False.
 * `vary_phase` (bool): varies the phase $\phi$ of the $y$ wave from $0$ to $2 \pi$ &mdash; this causes the Lissajous figure to "rotate". Defaulted to True.
 * `show_dot` (bool): shows a white dot that traces the path of the Lissajous figure with time starting from $0$ and ending at the end of the cycle (`frames/fps`). Automically set to False.
 * `frames` (int): the number of frames to show in the GIF, set to 200 by default.
