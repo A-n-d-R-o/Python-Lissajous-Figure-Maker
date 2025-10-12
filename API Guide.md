@@ -13,7 +13,7 @@
 ## Required Packages
 * `numpy`: for vast majority of mathematical functions used.
 * `Fraction`: used once in the `joint_period` auxiliary function.
-* `matplotlib`: for plotting the Lissajous figures and creating the PNGs and GIFs.
+* `Matplotlib`: for plotting the Lissajous figures and creating the PNGs and GIFs.
 
 <br>
 
