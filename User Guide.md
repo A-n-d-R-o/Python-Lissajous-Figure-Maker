@@ -111,7 +111,7 @@ The function that plots a moving Lissajous figure, with any or none of: a varyin
 
 Note: setting all the above Boolean parameters to False produces a GIF with no movement &mdash; using `still_liss` would be more efficient if that effect is desired.
 
-Example call and output: 
+Example call and output:
 
 `anim_liss(amp1=0.5, af1=0.9, draw=True, show_dot=False, vary_phase=True, frames=200, fps=20)`
 
