@@ -1,8 +1,8 @@
 <table align="center">
   <tr>
-    <td><img src="SL-1-1.25-1-1-0.png" width="150" /></td>
-    <td><img src="SL-1-1-1-1-1.5707963267948966.png" width="150" /></td>
-    <td><img src="SL-1-1.05-1-1.25-0.png" width="150" /></td>
+    <td><img src="Images/SL-1-1.25-1-1-0.png" width="200" /></td>
+    <td><img src="Images/SL-1-1-1-1-1.5707963267948966.png" width="200" /></td>
+    <td><img src="Images/SL-1-1.05-1-1.25-0.png" width="200" /></td>
   </tr>
 </table>
 
