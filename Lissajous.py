@@ -78,7 +78,7 @@ def anim_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, 
 
     interval = 2 * joint_period(af1, af2)
     t = np.linspace(0, interval, 1000)
-    t_norm = t / (t[-1] - t[0]) * (frames / fps)
+    t_norm = t / t[-1] * (frames / fps)
     
     if vary_phase:
         phases = np.linspace(0, 2*np.pi, frames)
@@ -142,7 +142,7 @@ def liss_and_waves(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=T
 
     interval = 2 * joint_period(af1, af2)
     t = np.linspace(0, interval, 1000)
-    t_norm = t / (t[-1] - t[0]) * (frames / fps)
+    t_norm = t / t[-1] * (frames / fps)
     half_t = frames/fps/2
 
     if vary_phase:
