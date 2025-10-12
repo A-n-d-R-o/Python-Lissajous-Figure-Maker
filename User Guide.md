@@ -147,5 +147,5 @@ Example call and output:
 `liss_and_waves(amp2=0.25, af2=3, draw=False, vary_phase=True, show_dot=True, frames=200, fps=20)`
 
 <p align="center">
-  <img src="Images/LW-1-1-0.25-3-0-False-True-True-200-20.gif" width="500"/>
+  <img src="Images/LW-1-1-0.25-3-0-False-True-True-200-20.gif" width="700"/>
 </p>
