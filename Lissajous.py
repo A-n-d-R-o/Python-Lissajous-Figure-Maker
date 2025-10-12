@@ -57,7 +57,7 @@ def one_plot(amp1, af1, amp2, af2, phi):
 
     return fig, ax
 
-'''PNG Lissagous'''
+'''PNG Lissajous'''
 
 def still_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0):
 
@@ -72,7 +72,7 @@ def still_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0):
     plt.plot(x, y, color='orange', linewidth=2)
     plt.savefig(f'SL-{amp1}-{af1}-{amp1}-{af2}-{phi}.png')
 
-'''GIF Lissagous without waves'''
+'''GIF Lissajous without waves'''
 
 def anim_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, show_dot=False, frames=200, fps=20):
 
@@ -136,7 +136,7 @@ def anim_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, 
         writer=PillowWriter(fps=fps)
              )
 
-'''GIF Lissagous figure with waves'''
+'''GIF Lissajous figure with waves'''
 
 def liss_and_waves(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, show_dot=False, frames=200, fps=20):
 
