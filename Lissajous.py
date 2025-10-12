@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
 from matplotlib.gridspec import GridSpec
 
-'''auxilliary functions'''
+'''auxiliary functions'''
 
 def joint_period(af1, af2):
 
