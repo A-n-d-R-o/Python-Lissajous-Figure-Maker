@@ -24,7 +24,7 @@
 ```python
 def joint_period(af1, af2):
 ```
-Given two angular frequencies, `af1` and `af2`, this function calculates the $x$ distance of the "overlapping period" of two sine waves with those angular frequencies &mdash; used to calculate the minimum interval for which to sample over to produce the Lissajous figures.
+Given two angular frequencies, `af1` and `af2`, this function calculates the $x$ distance of the "overlapping period" of two sine waves with such angular frequencies &mdash; used to calculate the minimum interval for which to sample over to produce the Lissajous figures.
 
 * `af` (float): angular frequency of th $x$ wave.
 * `af2` (float): angular frequency of the $y$ wave.
