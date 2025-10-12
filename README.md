@@ -1,8 +1,8 @@
 <table align="center">
   <tr>
-    <td><img src="Images/SL-1-1.25-1-1-0.png" width="200" /></td>
-    <td><img src="Images/AL-1-1-1-1-1.5707963267948966-False-True-False-200-20.gif" width="200" /></td>
-    <td><img src="Images/LW-1-1.5-1-1-0-True-True-True-200-20.gif" width="200" /></td>
+    <td><img src="Images/SL-1-1.25-1-1-0.png" width="250" /></td>
+    <td><img src="Images/AL-1-1-1-1-1.5707963267948966-False-True-False-200-20.gif" width="250" /></td>
+    <td><img src="Images/LW-1-1.5-1-1-0-True-True-True-200-20.gif" width="250" /></td>
   </tr>
 </table>
 
