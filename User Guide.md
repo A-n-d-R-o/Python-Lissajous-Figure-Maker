@@ -13,7 +13,10 @@
 ## Required Packages
 * `numpy`: for vast majority of mathematical functions used.
 * `Fraction`: used once in the `joint_period` auxiliary function.
-* `Matplotlib`: for plotting the Lissajous figures and creating the PNGs and GIFs.
+* `matplotlib.pyplot`: for plotting.
+* `FuncAnimation`: for making the animations frame-by-frame.
+* `PillowWriter`: to save the result as a GIF.
+* `GridSpec`: for creating the 5-plot layout used in the `liss_and_waves` function.
 
 <br>
 
