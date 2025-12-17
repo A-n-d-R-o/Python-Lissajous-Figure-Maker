@@ -17,6 +17,7 @@
 * `FuncAnimation`: for making the animations frame-by-frame.
 * `PillowWriter`: to save the result as a GIF.
 * `GridSpec`: for creating the 5-plot layout used in the `liss_and_waves` function.
+* `IPython.display`, `HTML`: for immediately displaying GIFs, useful in Jupyter Notebook files.
 
 <br>
 
@@ -25,12 +26,12 @@
 ## Auxiliary Functions
 
 ```python
-def joint_period(af1, af2):
+def joint_period(omega_x, omega_y):
 ```
-Given two angular frequencies, `af1` and `af2`, this function calculates the $x$ distance of the "overlapping period" of two sine waves with such angular frequencies &mdash; used to calculate the minimum interval for which to sample over to produce the Lissajous figures.
+Given two angular frequencies, `omega_x` and `omega_y`, this function calculates the $x$ distance of the "overlapping period" of two sine waves with such angular frequencies &mdash; used to calculate the minimum interval for which to sample over to produce the Lissajous figures.
 
-* `af1` (float): angular frequency of th $x$ wave.
-* `af2` (float): angular frequency of the $y$ wave.
+* `omega_x` (float): angular frequency of th $x$ wave.
+* `omega_y` (float): angular frequency of the $y$ wave.
 
 <br>
 
@@ -53,15 +54,15 @@ A function for cleaning the phase parameter.
 <br>
 
 ```python
-def one_plot(amp1, af1, amp2, af2, phi):
+def one_plot(A_x, omega_x, A_y, omega_y, phi):
 ```
 
 Creates the single matplotlib plot used in the `still_liss` and `anim_liss` functions.
 
-* `amp1` (float): amplitude of the $x$ wave.
-* `af1` (float): angular frequency of the $x$ wave.
-* `amp2` (float): amplitude of the $y$ wave.
-* `af2` (float): angular frequency of the $y$ wave.
+* `A_x` (float): amplitude of the $x$ wave.
+* `omega_x` (float): angular frequency of the $x$ wave.
+* `A_y` (float): amplitude of the $y$ wave.
+* `omega_y` (float): angular frequency of the $y$ wave.
 * `phi` (float): phase of the $y$ wave.
 
 <br>
@@ -71,22 +72,23 @@ Creates the single matplotlib plot used in the `still_liss` and `anim_liss` func
 ## PNG Lissajous
 
 ```python
-def still_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0):
+def still_liss(A_x=1, omega_x=1, A_y=1, omega_y=1, phi=0, save=False):
 ```
 The function that plots a still image of a Lissojous figure on a single plot.
 
-* `amp1` (float): amplitude of the $x$ wave. Automatically set to 1.
-* `af1` (float): angular frequency of the $x$ wave. Automatically set to 1.
-* `amp2` (float): amplitude of the $y$ wave. Automatically set to 1.
-* `af2` (float): angular frequency of the $y$ wave. Automatically set to 1.
+* `A_x` (float): amplitude of the $x$ wave. Automatically set to 1.
+* `omega_x` (float): angular frequency of the $x$ wave. Automatically set to 1.
+* `A_y` (float): amplitude of the $y$ wave. Automatically set to 1.
+* `omega_y` (float): angular frequency of the $y$ wave. Automatically set to 1.
 * `phi` (float): phase of the $y$ wave. Automatically set to 0.
+* `save` (bool): whether or not to save the image, defaulted to False.
 
 Below is an example call and output to the function: 
 
-`still_liss(af2=2.5, phi=np.pi/2)`
+`still_liss(omega_y=2.5, phi=np.pi/2, save=True)`
 
 <p align="center">
-  <img src="Images/SL-1-1-1-2.5-1.5707963267948966.png" width="500"/>
+  <img src="Images/SL_1_1_1_2.5_1.571.png" width="500"/>
 </p>
 
 <br>
@@ -96,21 +98,26 @@ Below is an example call and output to the function:
 ## GIF Lissajous Without Waves
 
 ```python
-def anim_liss(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, show_dot=False, frames=200, fps=20):
+def anim_liss(
+    A_x=1, omega_x=1, A_y=1, omega_y=1, phi=0, draw=False, vary_phase=True, 
+    show_dot=False, frames=200, fps=20, save=False, display=False
+):
 ```
 
 The function that plots a moving Lissajous figure, with any or none of: a varying phase, a white dot to trace the path, and a parameter to draw and erase the figure.
 
-* `amp1` (float): amplitude of the $x$ wave. Automatically set to 1.
-* `af1` (float): angular frequency of the $x$ wave. Automatically set to 1.
-* `amp2` (float): amplitude of the $y$ wave. Automatically set to 1.
-* `af2` (float): angular frequency of the $y$ wave. Automatically set to 1.
+* `A_x` (float): amplitude of the $x$ wave. Automatically set to 1.
+* `omega_x` (float): angular frequency of the $x$ wave. Automatically set to 1.
+* `A_y` (float): amplitude of the $y$ wave. Automatically set to 1.
+* `omega_y` (float): angular frequency of the $y$ wave. Automatically set to 1.
 * `phi` (float): phase of the $y$ wave. Automatically set to 0.
 * `draw` (bool): whether or not to *draw and erase* the Lissajous figure, defaulted to False.
 * `vary_phase` (bool): varies the phase $\phi$ of the $y$ wave from $0$ to $2 \pi$ &mdash; this causes the Lissajous figure to "rotate". Defaulted to True.
 * `show_dot` (bool): shows a white dot that traces the path of the Lissajous figure with time starting from $0$ and ending at the end of the cycle (`frames/fps`). Automically set to False.
 * `frames` (int): the number of frames to show in the GIF, set to 200 by default.
 * `fps` (int): the frames per second of the GIF, defualted to 20. Note: due to limitations of Matplotlib, the fps of the GIF has to be relativiely low (20 is recommended), else it will not produce a valid GIF file.
+* `save` (bool): saves the created file when set to True, automatically set to False.
+* `display` (bool): displays the figure as a HTML display object when set to True. Defaulted to False.
 
 Note: setting all the above Boolean parameters to False produces a GIF with no movement &mdash; using `still_liss` would be more efficient if that effect is desired.
 
@@ -129,25 +136,30 @@ Example call and output:
 ## GIF Lissajous With Waves
 
 ```python
-def liss_and_waves(amp1=1, af1=1, amp2=1, af2=1, phi=0, draw=False, vary_phase=True, show_dot=False, frames=200, fps=20):
+def liss_and_waves(
+    A_x=1, omega_x=1, A_y=1, omega_y=1, phi=0, draw=False, vary_phase=True, 
+    show_dot=False, frames=200, fps=20, save=False, display=False
+):
 ```
 
 Plots the standard Lissajous figure, with the same parameters as `anim_liss`, but instead surrounded by the the $x$ and $y$ waves to provide an intuition of the formation of the Lissajous figure.
 
-* `amp1` (float): amplitude of the $x$ wave. Automatically set to 1.
-* `af1` (float): angular frequency of the $x$ wave. Automatically set to 1.
-* `amp2` (float): amplitude of the $y$ wave. Automatically set to 1.
-* `af2` (float): angular frequency of the $y$ wave. Automatically set to 1.
+* `A_x` (float): amplitude of the $x$ wave. Automatically set to 1.
+* `omega_x` (float): angular frequency of the $x$ wave. Automatically set to 1.
+* `A_y` (float): amplitude of the $y$ wave. Automatically set to 1.
+* `omega_y` (float): angular frequency of the $y$ wave. Automatically set to 1.
 * `phi` (float): phase of the $y$ wave. Automatically set to 0.
 * `draw` (bool): whether or not to *draw and erase* the Lissajous figure, defaulted to False.
 * `vary_phase` (bool): varies the phase $\phi$ of the $y$ wave from $0$ to $2 \pi$ &mdash; this causes the Lissajous figure to "rotate". Defaulted to True.
 * `show_dot` (bool): shows a white dot that traces the path of the Lissajous figure with time starting from $0$ and ending at the end of the cycle (`frames/fps`). Automically set to False.
 * `frames` (int): the number of frames to show in the GIF, set to 200 by default.
 * `fps` (int): the frames per second of the GIF, defualted to 20. Note: due to limitations of Matplotlib, the fps of the GIF has to be relativiely low (20 is recommended), else it will not produce a valid GIF file.
+* `save` (bool): saves the created file when set to True, automatically set to False.
+* `display` (bool): displays the figure as a HTML display object when set to True. Defaulted to False.
 
 Example call and output:
 
-`liss_and_waves(amp2=0.25, af2=3, draw=False, vary_phase=True, show_dot=True, frames=200, fps=20)`
+`liss_and_waves(A_y=0.25, omega_y=3, show_dot=True, save=True)`
 
 <p align="center">
   <img src="Images/LW-1-1-0.25-3-0-False-True-True-200-20.gif" width="700"/>
