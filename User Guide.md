@@ -126,7 +126,7 @@ Example call and output:
 `anim_liss(amp1=0.5, af1=0.9, draw=True, show_dot=False, vary_phase=True, frames=200, fps=20)`
 
 <p align="center">
-  <img src="Images/AL-0.5-0.9-1-1-0-True-True-False-200-20.gif" width="500"/>
+  <img src="Images/AL_0.5_0.9_1_1_0_True_True_False_200_20.gif" width="500"/>
 </p>
 
 <br>
@@ -162,5 +162,5 @@ Example call and output:
 `liss_and_waves(A_y=0.25, omega_y=3, show_dot=True, save=True)`
 
 <p align="center">
-  <img src="Images/LW-1-1-0.25-3-0-False-True-True-200-20.gif" width="700"/>
+  <img src="Images/LW_1_1_0.25_3_0_False_True_True_200_20.gif" width="700"/>
 </p>
