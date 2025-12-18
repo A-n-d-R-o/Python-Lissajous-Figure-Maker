@@ -157,7 +157,7 @@ def anim_liss(
         return HTML(anim.to_jshtml())
 
 '''GIF Lissajous with waves'''
-
+    
 def liss_and_waves(
     A_x=1, omega_x=1, A_y=1, omega_y=1, phi=0, draw=False, vary_phase=True, 
     show_dot=False, frames=200, fps=20, save=False, display=False
@@ -168,7 +168,9 @@ def liss_and_waves(
     t_norm = t / t[-1] * (frames / fps)
     half_t = frames/fps/2
 
+    title_phi = phi
     if vary_phase:
+        title_phi = 'phi(t)'
         phases = np.linspace(0, 2*np.pi, frames, endpoint=False)
     
     plt.style.use('dark_background')
@@ -202,7 +204,7 @@ def liss_and_waves(
         ax.set_xlim(0, half_t)
         ax.set_ylim(-scale, scale)
         ax.set_title(
-            rf'$y = {format_coeff(A_y)}\sin({format_coeff(omega_y)}t{format_phase(phi)})$',
+            rf'$y = {format_coeff(A_y)}\sin({format_coeff(omega_y)}t{format_phase(title_phi)})$',
             fontsize=12
         )
 
